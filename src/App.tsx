@@ -1,6 +1,7 @@
 import "./App.css";
-import Counter from "./components/Counter";
-import Form from "./components/Form";
+import UserDisplay from "./components/UserDisplay";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 import QuantumComputing from "./components/course/QuantumComputing";
 import UserProvider from "./components/providers/UserProvider";
 
@@ -43,11 +44,23 @@ function App() {
   return (
     <div className="App">
       <UserProvider>
-        <Counter initialCount={397} />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "20px",
+            marginTop: "20px",
+          }}
+        >
+          <Register />
+          <div style={{ border: "2px solid black", height: "200px" }} />
+          <Login />
+          <div style={{ border: "2px solid black", height: "200px" }} />
+          <UserDisplay />
+        </div>
         <hr />
         <QuantumComputing {...course} />
         <hr />
-        {/* <Form /> */}
       </UserProvider>
     </div>
   );

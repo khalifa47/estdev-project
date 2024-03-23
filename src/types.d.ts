@@ -16,11 +16,13 @@ type CourseProps = {
 };
 
 interface User {
-  name: string;
-  email: string;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  password?: string;
 }
 
 type UserContextType = {
   user: User | null;
-  setUser: (user: User | null) => void;
+  setUser: (user: React.SetStateAction<User | null>) => void;
 };
