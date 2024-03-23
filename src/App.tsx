@@ -1,8 +1,8 @@
 import "./App.css";
-import Context from "./components/Context";
 import Counter from "./components/Counter";
 import Form from "./components/Form";
 import QuantumComputing from "./components/course/QuantumComputing";
+import UserProvider from "./components/providers/UserProvider";
 
 function App() {
   const course: CourseProps = {
@@ -42,12 +42,13 @@ function App() {
 
   return (
     <div className="App">
-      <Counter initialCount={397} />
-      <hr />
-      <QuantumComputing {...course} />
-      {/* <Context />
-      <br />
-      <Form /> */}
+      <UserProvider>
+        <Counter initialCount={397} />
+        <hr />
+        <QuantumComputing {...course} />
+        <hr />
+        {/* <Form /> */}
+      </UserProvider>
     </div>
   );
 }

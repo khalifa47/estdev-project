@@ -14,3 +14,13 @@ type CourseProps = {
   tuition: number;
   duration: number;
 };
+
+interface User {
+  name: string;
+  email: string;
+}
+
+type UserContextType = {
+  user: User | null;
+  setUser: (user: User | null) => void;
+};
