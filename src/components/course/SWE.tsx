@@ -7,7 +7,9 @@ const SWE = (course: CourseProps) => {
   return (
     <div style={{ marginLeft: "20px" }}>
       <Course {...course} />
-      {prerequisite && <Programming {...prerequisite.course} />}
+      {prerequisite.map((p) => (
+        <Programming key={p.course.subject} {...p.course} />
+      ))}
     </div>
   );
 };

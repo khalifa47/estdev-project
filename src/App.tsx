@@ -7,34 +7,50 @@ import UserProvider from "./components/providers/UserProvider";
 
 function App() {
   const course: CourseProps = {
-    prerequisite: {
-      category: "swe",
-      course: {
-        prerequisite: {
-          category: "programming",
-          course: {
-            prerequisite: {
-              category: "math",
+    prerequisite: [
+      {
+        category: "swe",
+        course: {
+          prerequisite: [
+            {
+              category: "programming",
               course: {
-                prerequisite: null,
-                subject: "Calculus",
+                prerequisite: [
+                  {
+                    category: "math",
+                    course: {
+                      prerequisite: [],
+                      subject: "Calculus",
+                      credits: 4,
+                      tuition: 200,
+                      duration: 8,
+                    },
+                  },
+                  {
+                    category: "math",
+                    course: {
+                      prerequisite: [],
+                      subject: "Discrete Mathematics",
+                      credits: 4,
+                      tuition: 180,
+                      duration: 7,
+                    },
+                  },
+                ],
+                subject: "Intermediate Programming",
                 credits: 4,
-                tuition: 200,
-                duration: 8,
+                tuition: 300,
+                duration: 12,
               },
             },
-            subject: "Intermediate Programming",
-            credits: 4,
-            tuition: 300,
-            duration: 12,
-          },
+          ],
+          subject: "Advanced Software Engineering",
+          credits: 5,
+          tuition: 400,
+          duration: 14,
         },
-        subject: "Advanced Software Engineering",
-        credits: 5,
-        tuition: 400,
-        duration: 14,
       },
-    },
+    ],
     subject: "Quantum Computing",
     credits: 4,
     tuition: 500,

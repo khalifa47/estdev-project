@@ -8,7 +8,7 @@ type Prerequisite = {
 };
 
 type CourseProps = {
-  prerequisite: Prerequisite | null;
+  prerequisite: Prerequisite[];
   subject: string;
   credits: number;
   tuition: number;

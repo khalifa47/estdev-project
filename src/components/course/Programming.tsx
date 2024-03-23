@@ -7,7 +7,11 @@ const Programming = (course: CourseProps) => {
   return (
     <div style={{ marginLeft: "20px" }}>
       <Course {...course} />
-      {prerequisite && <Math {...prerequisite.course} />}
+      <div className="grid">
+        {prerequisite.map((p) => (
+          <Math key={p.course.subject} {...p.course} />
+        ))}
+      </div>
     </div>
   );
 };

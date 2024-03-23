@@ -7,7 +7,9 @@ const QuantumComputing = (course: CourseProps) => {
   return (
     <>
       <Course {...course} />
-      {prerequisite && <SWE {...prerequisite.course} />}
+      {prerequisite.map((p) => (
+        <SWE key={p.course.subject} {...p.course} />
+      ))}
     </>
   );
 };
